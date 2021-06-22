@@ -5,4 +5,4 @@
 
 ### Context
 
-![Context](.\src\CarRent_BigPicture_Context.svg)
+![Context](./src/CarRent_BigPicture_Context.svg)
