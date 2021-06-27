@@ -1,0 +1,21 @@
+site_name: CarRent
+site_description: "CarRent"
+theme: 
+  name: material
+  features:
+    - tabs
+    - instant
+  icon:
+    logo: material/cloud
+    repo: fontawesome/brands/github
+  include_search_page: false
+  search_index_only: true
+
+  plugins:
+  - search
+  - awesome-pages:
+      collapse_single_pages: true
+
+markdown_extensions:
+  - meta
+  - admonition
