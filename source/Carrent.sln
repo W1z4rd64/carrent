@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C06000E3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carrent", "src\Carrent\Carrent.csproj", "{83BD7C85-7159-4E2A-BE77-B53E4CFEA4BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carrent.Tests", "tests\Carrent.Tests\Carrent.Tests.csproj", "{A70F015E-068D-4FA6-8A9F-0824CB45E07F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,12 +21,17 @@ Global
 		{83BD7C85-7159-4E2A-BE77-B53E4CFEA4BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83BD7C85-7159-4E2A-BE77-B53E4CFEA4BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83BD7C85-7159-4E2A-BE77-B53E4CFEA4BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A70F015E-068D-4FA6-8A9F-0824CB45E07F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A70F015E-068D-4FA6-8A9F-0824CB45E07F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A70F015E-068D-4FA6-8A9F-0824CB45E07F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A70F015E-068D-4FA6-8A9F-0824CB45E07F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{83BD7C85-7159-4E2A-BE77-B53E4CFEA4BF} = {21816726-2726-44D9-B366-4614FD48747A}
+		{A70F015E-068D-4FA6-8A9F-0824CB45E07F} = {C06000E3-4FE7-4B98-8732-05D4C9152D13}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2DFEB7E6-C093-4509-A0E2-E1325B0021C5}
