@@ -11,6 +11,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Carrent.CarManagment.Application;
+using Carrent.CarManagment.Domain;
+using Carrent.CarManagment.Infrastructure;
+using Carrent.Comman.Infrastructure.DbContext;
+using Carrent.Comman.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace Carrent
 {
@@ -26,6 +32,21 @@ namespace Carrent
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            //add the database context
+            services.AddDbContext<CarRentDbContext>(config =>
+            {
+                // Konfiguration zum Connection String in appsettings.json
+                config.UseSqlServer(Configuration.GetConnectionString("baseConnection"));
+            });
+
+
+            services.AddTransient<ICarService, CarService>();
+            services.AddScoped<ICarRepository, CarRepository>();
+
+            services.AddTransient<ICarClassService, CarClassService>();
+            services.AddScoped<ICarClassRepository, CarClassRepository>();
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
