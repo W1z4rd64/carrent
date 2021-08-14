@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Carrent.Migrations
 {
     [DbContext(typeof(CarRentDbContext))]
-    [Migration("20210814110501_inital")]
-    partial class inital
+    [Migration("20210814193011_t1")]
+    partial class t1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -99,6 +99,12 @@ namespace Carrent.Migrations
 
                     b.Property<Guid>("CustomerId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("PickUp")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Return")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("State")
                         .IsRequired()

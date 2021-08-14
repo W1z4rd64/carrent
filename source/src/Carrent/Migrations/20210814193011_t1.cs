@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Carrent.Migrations
 {
-    public partial class inital : Migration
+    public partial class t1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -27,7 +27,9 @@ namespace Carrent.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     State = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CustomerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CarId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    CarId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    PickUp = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Return = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -10,13 +10,19 @@ namespace Carrent.CarManagment.Application
     public class CustomerContractService : ICustomerContractService
     {
         private readonly ICustomerContractRepository _repository;
-        public CustomerContractService(ICustomerContractRepository customerContractRepository)
+        //private readonly IDateTimeWrapper _dateTimeWrapper;
+        public CustomerContractService(ICustomerContractRepository customerContractRepository)//, IDateTimeWrapper dateTimeWrapper)
         {
             _repository = customerContractRepository;
+            //_dateTimeWrapper = dateTimeWrapper;
         }
 
         public void Add(CustomerContract item)
         {
+            //if(item.PickUp < item.Return && item.PickUp >= _dateTimeWrapper.GetDateTimeNow())
+            //{
+            //    _repository.Insert(item);
+            //}
             _repository.Insert(item);
         }
 

@@ -20,6 +20,7 @@ namespace Carrent.CarManagment.Api
         {
             _customerContractService = customerContractService;
         }
+
         // GET: api/<CustomerContractController>
         [HttpGet]
         public List<CustomerContractDto> Get()
