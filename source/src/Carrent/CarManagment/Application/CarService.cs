@@ -38,7 +38,7 @@ namespace Carrent.CarManagment.Application
 
         public Car GetById(Guid id)
         {
-            return _repository.FindById(id).FirstOrDefault();
+            return _repository.GetById(id);
         }
 
         public List<Car> GetByType(CarClass type)

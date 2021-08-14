@@ -20,9 +20,9 @@ namespace Carrent.Comman.Infrastructure.DbContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Customer>().ToTable("CarRecntCars");
-            modelBuilder.Entity<Customer>().ToTable("CarRecntCarClasses");
-            modelBuilder.Entity<Customer>().ToTable("CarRecntCustomers");
+            modelBuilder.Entity<Car>().ToTable("CarRent_Cars");
+            modelBuilder.Entity<CarClass>().ToTable("CarRent_CarClasses");
+            modelBuilder.Entity<Customer>().ToTable("CarRent_Customers");
 
             ConfigureModelBinding<Car, Guid>(modelBuilder);
             ConfigureModelBinding<CarClass, Guid>(modelBuilder);

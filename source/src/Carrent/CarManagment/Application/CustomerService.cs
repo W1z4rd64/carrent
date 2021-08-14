@@ -9,39 +9,39 @@ namespace Carrent.CarManagment.Application
 {
     public class CustomerService : ICustomerService
     {
-        private readonly ICustomerRepository _customerRepository;
+        private readonly ICustomerRepository _repository;
         public CustomerService(ICustomerRepository customerRepository)
         {
-            _customerRepository = customerRepository;
+            _repository = customerRepository;
         }
-        public void Add(Customer car)
+        public void Add(Customer customer)
         {
-            _customerRepository.Insert(car);
+            _repository.Insert(customer);
         }
 
-        public void Delete(Customer car)
+        public void Delete(Customer customer)
         {
-            _customerRepository.Remove(car);
+            _repository.Remove(customer);
         }
 
         public void DeleteById(Guid id)
         {
-            _customerRepository.Remove(id);
+            _repository.Remove(id);
         }
 
         public List<Customer> GetAll()
         {
-            return _customerRepository.GetAll();
+            return _repository.GetAll();
         }
 
         public Customer GetById(Guid id)
         {
-            return _customerRepository.FindById(id).FirstOrDefault();
+            return _repository.GetById(id);
         }
 
-        public void Update(Customer car)
+        public void Update(Customer customer)
         {
-            _customerRepository.Update(car);
+            _repository.Update(customer);
         }
     }
 }

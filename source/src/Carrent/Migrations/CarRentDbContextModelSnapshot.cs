@@ -38,7 +38,9 @@ namespace Carrent.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cars");
+                    b.HasIndex("ClassId");
+
+                    b.ToTable("CarRent_Cars");
                 });
 
             modelBuilder.Entity("Carrent.CarManagment.Domain.CarClass", b =>
@@ -56,7 +58,43 @@ namespace Carrent.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CarClasses");
+                    b.ToTable("CarRent_CarClasses");
+                });
+
+            modelBuilder.Entity("Carrent.CarManagment.Domain.Customer", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Firstname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Housnumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Lastname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Street")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CarRent_Customers");
+                });
+
+            modelBuilder.Entity("Carrent.CarManagment.Domain.Car", b =>
+                {
+                    b.HasOne("Carrent.CarManagment.Domain.CarClass", "Class")
+                        .WithMany()
+                        .HasForeignKey("ClassId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Class");
                 });
 #pragma warning restore 612, 618
         }

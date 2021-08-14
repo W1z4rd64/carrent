@@ -1,4 +1,6 @@
-﻿using Carrent.CarManagment.Domain;
+﻿using Carrent.CarManagment.Application;
+using Carrent.CarManagment.Domain;
+using Carrent.Comman.Infrastructure.DbContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,39 +10,47 @@ namespace Carrent.CarManagment.Infrastructure
 {
     public class CustomerRepository : ICustomerRepository
     {
+        private readonly CarRentDbContext _dbContext;
 
-        public CustomerRepository(iService)
+        public CustomerRepository(CarRentDbContext carRentDbContext)
         {
-
+            _dbContext = carRentDbContext;
         }
-        public List<Customer> FindById(Guid id)
+        public Customer GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return _dbContext.Customers.Select(c => c).Where(c => c.Id.Equals(id)).FirstOrDefault();
         }
 
         public List<Customer> GetAll()
         {
-            throw new NotImplementedException();
+            return _dbContext.Customers.Select(c => c).ToList();
         }
 
         public void Insert(Customer entity)
         {
-            throw new NotImplementedException();
+            _dbContext.Customers.Add(entity);
+            Update(entity);
         }
 
         public void Remove(Guid id)
         {
-            throw new NotImplementedException();
+            var customer = GetById(id);
+            if(customer != null)
+            {
+                _dbContext.Customers.Remove(customer);
+                _dbContext.SaveChanges();
+            }
         }
 
         public void Remove(Customer entity)
         {
-            throw new NotImplementedException();
+            Remove(entity.Id);
         }
 
         public void Update(Customer entity)
         {
-            throw new NotImplementedException();
+            _dbContext.Update(entity);
+            _dbContext.SaveChanges();
         }
     }
 }

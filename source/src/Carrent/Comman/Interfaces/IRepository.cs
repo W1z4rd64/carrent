@@ -8,7 +8,7 @@ namespace Carrent.Comman.Interfaces
     public interface IRepository<T>
     {
         List<T> GetAll();
-        List<T> FindById(Guid id);
+        T GetById(Guid id);
         void Insert(T entity);
         void Update(T entity);
         void Remove(Guid id);

@@ -38,7 +38,7 @@ namespace Carrent.CarManagment.Application
 
         public CarClass GetById(Guid id)
         {
-            return _reposotory.FindById(id).FirstOrDefault();
+            return _reposotory.GetById(id);
         }
 
         public void Update(CarClass carClass)

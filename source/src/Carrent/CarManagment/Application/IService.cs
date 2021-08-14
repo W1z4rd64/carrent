@@ -11,12 +11,12 @@ namespace Carrent.CarManagment.Application
 
         T GetById(Guid id);
 
-        void Add(T car);
+        void Add(T item);
 
         void DeleteById(Guid id);
 
-        void Delete(T car);
+        void Delete(T item);
 
-        void Update(T car);
+        void Update(T item);
     }
 }

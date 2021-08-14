@@ -14,35 +14,35 @@ namespace Carrent.CarManagment.Infrastructure
 {
     public class CarRepository : ICarRepository
     {
-        private readonly CarRentDbContext _carRentDbContext;
+        private readonly CarRentDbContext _dbContext;
         public CarRepository(CarRentDbContext carRentDbContext)
         {
-            _carRentDbContext = carRentDbContext;
+            _dbContext = carRentDbContext;
         }
 
-        public List<Car> FindById(Guid id)
+        public Car GetById(Guid id)
         {
-            return _carRentDbContext.Cars.Include(x => x.Class).Where(car => car.Id.Equals(id)).ToList();
+            return _dbContext.Cars.Include(x => x.Class).Where(car => car.Id.Equals(id)).FirstOrDefault();
         }
 
         public List<Car> GetAll()
         {
-            return _carRentDbContext.Cars.Include(x => x.Class).ToList();
+            return _dbContext.Cars.Include(x => x.Class).ToList();
         }
 
         public void Insert(Car entity)
         {
-            _carRentDbContext.Cars.Add(entity);
+            _dbContext.Cars.Add(entity);
             Update(entity);
         }
 
         public void Remove(Guid id)
         {
-            var exists = FindById(id).First();
+            var exists = GetById(id);
             if (exists != null)
             {
-                _carRentDbContext.Cars.Remove(exists);
-                Update(exists);
+                _dbContext.Cars.Remove(exists);
+                _dbContext.SaveChanges();
             }
         }
 
@@ -53,12 +53,8 @@ namespace Carrent.CarManagment.Infrastructure
 
         public void Update(Car entity)
         {
-            _carRentDbContext.SaveChanges();
-            //var exists = FindById(entity.Id);
-            //if (exists != null)
-            //{
-            //    _carRentDbContext.Cars.Update(entity);
-            //}
+            _dbContext.Update(entity);
+            _dbContext.SaveChanges();
         }
     }
 }

@@ -47,6 +47,9 @@ namespace Carrent
             services.AddTransient<ICarClassService, CarClassService>();
             services.AddScoped<ICarClassRepository, CarClassRepository>();
 
+            services.AddTransient<ICustomerService, CustomerService>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
