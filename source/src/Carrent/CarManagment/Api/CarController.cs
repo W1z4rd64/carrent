@@ -81,7 +81,6 @@ namespace Carrent.Api
             if (car != null)
             {
                 car.Brand = value.Brand;
-                //car.Class = value.Class;
                 car.ClassId = id;
                 car.Type = car.Type;
                 _carService.Update(car);

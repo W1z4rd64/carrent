@@ -29,7 +29,7 @@ namespace Carrent.CarManagment.Infrastructure
         public void Insert(CarClass entity)
         {
             _dbContext.Add(entity);
-            Update(entity);
+            _dbContext.SaveChanges();
         }
 
         public void Remove(Guid id)

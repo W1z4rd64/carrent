@@ -8,16 +8,5 @@ namespace Carrent.CarManagment.Application
 {
     public interface ICarClassService : IService<CarClass>
     {
-        //List<CarClass> GetAll();
-
-        //CarClass GetById(Guid id);
-
-        //void Add(CarClass car);
-
-        //void DeleteById(Guid id);
-
-        //void Delete(CarClass car);
-
-        //void Update(CarClass car);
     }
 }

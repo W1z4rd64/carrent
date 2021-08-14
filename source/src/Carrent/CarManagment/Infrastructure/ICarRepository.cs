@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Carrent.CarManagment.Domain;
+﻿using Carrent.CarManagment.Domain;
+using Carrent.Comman.Interfaces;
 
-namespace Carrent.Comman.Interfaces
+namespace Carrent.CarManagment.Infrastructure
 {
     public interface ICarRepository : IRepository<Car>
     {

@@ -5,7 +5,6 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Carrent.CarManagment.Domain;
-using Carrent.Comman.Interfaces;
 using CarRent.Backend.Common.Infrastructure.Context;
 using Carrent.Comman.Infrastructure.DbContext;
 using Microsoft.EntityFrameworkCore;
@@ -33,7 +32,7 @@ namespace Carrent.CarManagment.Infrastructure
         public void Insert(Car entity)
         {
             _dbContext.Cars.Add(entity);
-            Update(entity);
+            _dbContext.SaveChanges();
         }
 
         public void Remove(Guid id)

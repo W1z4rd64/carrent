@@ -21,6 +21,20 @@ namespace Carrent.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CarRent_CustomerContracts",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    State = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CustomerId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CarId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CarRent_CustomerContracts", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "CarRent_Customers",
                 columns: table => new
                 {
@@ -65,6 +79,9 @@ namespace Carrent.Migrations
         {
             migrationBuilder.DropTable(
                 name: "CarRent_Cars");
+
+            migrationBuilder.DropTable(
+                name: "CarRent_CustomerContracts");
 
             migrationBuilder.DropTable(
                 name: "CarRent_Customers");

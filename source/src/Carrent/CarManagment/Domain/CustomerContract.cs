@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Carrent.CarManagment.Domain
 {
-    public class Contracts
+    public class CustomerContract
     {
 
         public Guid Id { get; set; }
@@ -19,5 +19,11 @@ namespace Carrent.CarManagment.Domain
 
         [Required]
         public Guid CarId { get; set; }
+
+        [Required]
+        public DateTime PickUp { get; set; }
+
+        [Required]
+        public DateTime Return { get; set; }
     }
 }

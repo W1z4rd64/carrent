@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Carrent.Migrations
 {
     [DbContext(typeof(CarRentDbContext))]
-    [Migration("20210812201111_inital")]
+    [Migration("20210814110501_inital")]
     partial class inital
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -86,6 +86,27 @@ namespace Carrent.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CarRent_Customers");
+                });
+
+            modelBuilder.Entity("Carrent.CarManagment.Domain.CustomerContract", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CarId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CustomerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CarRent_CustomerContracts");
                 });
 
             modelBuilder.Entity("Carrent.CarManagment.Domain.Car", b =>
