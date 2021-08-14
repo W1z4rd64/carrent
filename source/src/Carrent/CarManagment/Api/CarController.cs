@@ -30,13 +30,13 @@ namespace Carrent.Api
         public List<CarDto> Get()
         {
             var car = _carService.GetAll();
-            // Mapping Car-Object to CarDto-Object
             return car.Select(car => new CarDto()
             {
                 Brand = car.Brand,
-                //Class = car.Class,
+                Class = car.Class,
                 ClassId = car.ClassId,
-                Id = car.Id
+                Id = car.Id,
+                Type = car.Type
             }).ToList();
         }
 

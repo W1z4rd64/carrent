@@ -26,7 +26,7 @@ namespace Carrent.CarManagment.Infrastructure
 
         public List<Car> GetAll()
         {
-            return _dbContext.Cars.Include(x => x.Class).ToList();
+            return _dbContext.Cars.Select(x => x).Include(x => x.Class).ToList();
         }
 
         public void Insert(Car entity)
