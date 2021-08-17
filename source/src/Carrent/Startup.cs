@@ -53,7 +53,7 @@ namespace Carrent
             services.AddTransient<ICustomerContractService, CustomerContractService>();
             services.AddScoped<ICustomerContractRepository, CustomerContractRepository>();
 
-
+            /*TEST*/
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
