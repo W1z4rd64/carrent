@@ -1,4 +1,7 @@
 # CarRent
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=W1z4rd64_carrent&metric=alert_status)](https://sonarcloud.io/dashboard?id=W1z4rd64_carrent)
+
 ## 1. C4 Pattern
 
 1. Context

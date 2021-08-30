@@ -67,6 +67,18 @@ namespace Carrent.Tests.CarManagment.Infrastructure
                         context.SaveChanges();
 
 
+                        var customer = new Customer()
+                        {
+                            Id = Guid.NewGuid(),
+                            Firstname = "Marc",
+                            Lastname = "Peters",
+                            Housnumber = "78",
+                            Street = "Wecken"
+                        };
+                        context.Customers.Add(customer);
+                        context.SaveChanges();
+
+
 
 
                         context.SaveChanges();
