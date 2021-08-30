@@ -78,6 +78,18 @@ namespace Carrent.Tests.CarManagment.Infrastructure
                         context.Customers.Add(customer);
                         context.SaveChanges();
 
+                        var newCustomerContrect = new CustomerContract()
+                        {
+                            Id = Guid.NewGuid(),
+                            CarId = car.Id,
+                            CustomerId = customer.Id,
+                            PickUp = new DateTime(2000, 1, 1, 12, 0, 0),
+                            Return = new DateTime(2000, 1, 2, 12, 0, 0),
+                            State = "Reservation"
+                        };
+                        context.CustomerContracts.Add(newCustomerContrect);
+                        context.SaveChanges();
+
 
 
 

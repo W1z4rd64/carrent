@@ -99,18 +99,18 @@ namespace Carrent.CarManagment.Api
         }
 
         // GET api/<CustomerContractController>/5
-        //[HttpGet("{GetByCustomerId/id}")]
-        //public List<CustomerContractDto> GetByCustomerId(Guid id)
-        //{
-        //    return _customerContractService.GetByCustomerId(id)
-        //        .Select(cc => new CustomerContractDto()
-        //        {
-        //            Id = cc.Id,
-        //            CustomerId = cc.CustomerId,
-        //            CarId = cc.CarId,
-        //            State = cc.State
-        //        })
-        //        .ToList();
-        //}
+        [HttpGet("{GetByCustomerId/id}")]
+        public List<CustomerContractDto> GetByCustomerId(Guid id)
+        {
+            return _customerContractService.GetByCustomerId(id)
+                .Select(cc => new CustomerContractDto()
+                {
+                    Id = cc.Id,
+                    CustomerId = cc.CustomerId,
+                    CarId = cc.CarId,
+                    State = cc.State
+                })
+                .ToList();
+        }
     }
 }
