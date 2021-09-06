@@ -82,7 +82,7 @@ namespace Carrent.Api
             {
                 car.Brand = value.Brand;
                 car.ClassId = id;
-                car.Type = car.Type;
+                car.Type = value.Type;
                 _carService.Update(car);
             }
         }
