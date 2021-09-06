@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{21816726-2726-44D9-B366-4614FD48747A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C06000E3-4FE7-4B98-8732-05D4C9152D13}"
+	ProjectSection(SolutionItems) = preProject
+		Loadtest.js = Loadtest.js
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carrent", "src\Carrent\Carrent.csproj", "{83BD7C85-7159-4E2A-BE77-B53E4CFEA4BF}"
 EndProject
