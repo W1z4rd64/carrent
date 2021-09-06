@@ -18,11 +18,6 @@ namespace Carrent.CarManagment.Domain
         public string Brand { get; set; }
         [Required]
         public string Type { get; set; }
-
-        //public Car()
-        //{
-        //    Class = new CarClass();
-        //}
     }
 
 }
